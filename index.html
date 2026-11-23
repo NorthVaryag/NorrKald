@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Norrkald Systems</title>
+    <meta name="description" content="Norrkald Systems: разработка, интеграции, инфраструктура и сопровождение программных систем для российского бизнеса.">
+    <meta property="og:title" content="Norrkald Systems">
+    <meta property="og:description" content="IT-разработка и сопровождение для российского бизнеса.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='60 40 140 140'%3E%3Crect x='60' y='40' width='140' height='140' rx='30' fill='%230E2F44'/%3E%3Cpolygon points='88,156 88,82 116,82 144,126 144,82 172,82 172,156 144,156 116,112 116,156' fill='%234FD1C5'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <style>
+        :root{
+            --bg:#0A2233; --bg2:#0E2F44; --bg3:#07192A;
+            --line:#1D4560; --line2:#2A5570;
+            --fg:#E6F4FA; --ice:#CDEBF7; --muted:#B7D3E0; --dim:#9DBBCB;
+            --accent:#4FD1C5; --accent2:#7CC4E0; --ink:#062030;
+            --display:'Space Grotesk',system-ui,sans-serif;
+            --body:Inter,system-ui,sans-serif;
+            --mono:'JetBrains Mono',ui-monospace,monospace;
+        }
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{color:var(--accent)}
+        a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+        h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+        p{margin:0}
+        .wrap{width:100%;max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+        .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+        .sec-title{font-weight:600;font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.8px}
+
+        /* nav */
+        .nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
+        .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+        .brand span{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.5px}
+        .brand span i{font-style:normal;font-weight:500;color:var(--dim)}
+        .menu{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px}
+        .menu a{color:var(--ice);text-decoration:none;font-size:15px}
+        .menu a:hover{color:var(--accent)}
+        .menu .pill{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid var(--line2);border-radius:10px;color:var(--fg);font-weight:500}
+
+        /* hero */
+        .hero{padding-block:96px 104px;background:
+                radial-gradient(ellipse 60% 70% at 80% 0%,rgba(79,209,197,.2),transparent 70%),
+                radial-gradient(ellipse 50% 60% at 98% 35%,rgba(124,196,224,.14),transparent 70%),
+                linear-gradient(rgba(124,196,224,.06) 1px,transparent 1px) 0 0/48px 48px,
+                linear-gradient(90deg,rgba(124,196,224,.06) 1px,transparent 1px) 0 0/48px 48px,var(--bg)}
+        .hero .wrap{display:flex;flex-direction:column;gap:28px}
+        .hero h1{font-weight:700;font-size:clamp(36px,6.4vw,78px);line-height:1.04;letter-spacing:-1.5px;max-width:980px}
+        .hero .lead{max-width:660px;font-size:clamp(17px,2vw,20px);color:var(--muted)}
+        .btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+        .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:10px;font-weight:600;text-decoration:none}
+        .btn.primary{background:var(--accent);color:var(--ink)}
+        .btn.primary:hover{background:var(--ice)}
+        .btn.ghost{border:1px solid var(--line2);color:var(--fg);font-weight:500}
+        .btn.ghost:hover{border-color:var(--accent)}
+
+        /* sections */
+        section{padding-block:96px}
+        .alt{background:var(--bg2)}
+        .head{display:flex;flex-direction:column;gap:12px;max-width:700px;margin-bottom:48px}
+        .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px}
+        .card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+        .card h3{font-weight:600;font-size:22px;line-height:1.2}
+        .card p,.row p,.step p{color:var(--muted);font-size:16px}
+        .card svg{width:32px;height:32px}
+
+        .split{display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
+        .split>.l{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px}
+        .split>.l p{color:var(--muted);max-width:460px}
+        .split>.r{flex:1.4 1 400px;min-width:0}
+        .row{display:flex;flex-direction:column;gap:6px;padding:26px 0;border-top:1px solid var(--line)}
+        .row h3{font-weight:600;font-size:21px}
+        .row p{max-width:560px}
+
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:28px}
+        .step{display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--accent);padding-top:18px;min-width:0}
+        .step b{font-family:var(--mono);font-weight:400;font-size:14px;color:var(--accent2)}
+        .step h3{font-weight:600;font-size:21px}
+
+        /* contact */
+        .contact{background:radial-gradient(ellipse 55% 80% at 15% 100%,rgba(79,209,197,.18),transparent 70%),var(--bg2)}
+        .contact .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;justify-content:space-between}
+        .contact .l{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px}
+        .contact h2{font-weight:700;font-size:clamp(32px,5vw,58px);line-height:1.05;letter-spacing:-1px}
+        .contact .l p{color:var(--muted);max-width:520px}
+        .box{flex:0 1 400px;min-width:0;display:flex;flex-direction:column;gap:18px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:28px}
+        .box small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+        .box a{font-family:var(--display);font-weight:600;font-size:clamp(20px,3vw,26px);color:var(--fg);text-decoration:none;word-break:break-word}
+        .box a:hover{color:var(--accent)}
+
+        footer{background:var(--bg3);color:var(--dim);font-size:14px}
+        footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-block:28px}
+
+        @media (max-width:640px){
+            section{padding-block:64px}
+            .hero{padding-block:56px 72px}
+            .split{gap:32px}
+        }
+        @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="Norrkald Systems, на главную">
+            <svg width="40" height="40" viewBox="60 40 140 140" aria-hidden="true"><rect x="60" y="40" width="140" height="140" rx="22" fill="#0E2F44"/><path d="M84 66 Q130 42 176 66" fill="none" stroke="#4FD1C5" stroke-width="3" stroke-linecap="round"/><path d="M92 76 Q130 58 168 76" fill="none" stroke="#7CC4E0" stroke-width="2" stroke-linecap="round"/><polygon points="92,150 92,86 110,86 148,134 148,86 168,86 168,150 150,150 112,102 112,150" fill="#CDEBF7"/><polygon points="148,86 168,86 168,108" fill="#7CC4E0"/><polygon points="92,86 110,86 92,108" fill="#7CC4E0"/><path d="M84 166 L108 160 L132 166 L156 158 L176 166" fill="none" stroke="#4FD1C5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Norrkald <i>Systems</i></span>
+        </a>
+        <nav class="menu" aria-label="Основное меню">
+            <a href="#services">Услуги</a>
+            <a href="#approach">Подход</a>
+            <a href="#process">Как работаем</a>
+            <a class="pill" href="#contact">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main id="top">
+    <div class="hero">
+        <div class="wrap">
+            <div class="eyebrow">IT-разработка и сопровождение</div>
+            <h1>Программные системы для российского бизнеса: от идеи до стабильной работы</h1>
+            <p class="lead">Разрабатываем, запускаем и поддерживаем сервисы, интеграции и инфраструктуру. Учитываем российские требования и работаем с привычными вам системами.</p>
+            <div class="btns">
+                <a class="btn primary" href="#contact">Обсудить проект</a>
+                <a class="btn ghost" href="#services">Что мы делаем</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="services" class="alt">
+        <div class="wrap">
+            <div class="head">
+                <div class="eyebrow">Услуги</div>
+                <h2 class="sec-title">Что мы делаем для вашей компании</h2>
+            </div>
+            <div class="grid4">
+                <div class="card">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="#4FD1C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 9l-6 7 6 7M22 9l6 7-6 7M18 6l-4 20"/></svg>
+                    <h3>Разработка ПО</h3>
+                    <p>Веб-сервисы, личные кабинеты, внутренние системы и мобильные приложения под ваши процессы.</p>
+                </div>
+                <div class="card">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="#4FD1C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h8M20 10h8M4 22h8M20 22h8M12 10l8 12M12 22l8-12"/></svg>
+                    <h3>Интеграции</h3>
+                    <p>Связываем 1С, Битрикс24, amoCRM, маркетплейсы, платёжные системы и ваши сервисы между собой.</p>
+                </div>
+                <div class="card">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="#4FD1C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22a6 6 0 010-12 8 8 0 0115 1 5 5 0 01-1 11H8z"/></svg>
+                    <h3>Инфраструктура и DevOps</h3>
+                    <p>Развёртывание в российских облаках и на ваших серверах: автоматические релизы, мониторинг, резервные копии.</p>
+                </div>
+                <div class="card">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="#4FD1C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l10 4v8c0 6-4 10-10 12C10 26 6 22 6 16V8z"/></svg>
+                    <h3>Поддержка и безопасность</h3>
+                    <p>Сопровождаем запущенные системы, обновляем их и помогаем учесть требования 152-ФЗ о персональных данных.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach">
+        <div class="wrap split">
+            <div class="l">
+                <div class="eyebrow">Подход</div>
+                <h2 class="sec-title">Простая архитектура и понятные условия</h2>
+                <p>Выбираем решения, которые вы сможете поддерживать без нас, и говорим о сроках и стоимости до начала работ.</p>
+            </div>
+            <div class="r">
+                <div class="row"><h3>Российская инфраструктура</h3><p>Размещаем системы в российских дата-центрах и облаках, опираемся на открытое ПО и отечественные сервисы.</p></div>
+                <div class="row"><h3>Прозрачные условия</h3><p>Договор, этапы, сроки и бюджет в рублях согласуем до старта. Вы видите прогресс на каждом этапе.</p></div>
+                <div class="row"><h3>Код и доступы у вас</h3><p>Исходный код, документация и доступы к средам принадлежат заказчику. Мы не создаём зависимость от себя.</p></div>
+                <div class="row"><h3>Спокойный запуск</h3><p>Тестирование, мониторинг и план отката готовы до релиза, а не после первой аварии.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="alt">
+        <div class="wrap">
+            <div class="head">
+                <div class="eyebrow">Как работаем</div>
+                <h2 class="sec-title">Четыре шага от запроса до релиза</h2>
+            </div>
+            <div class="steps">
+                <div class="step"><b>01</b><h3>Разбор задачи</h3><p>Уточняем цели, ограничения и что считать успехом.</p></div>
+                <div class="step"><b>02</b><h3>Проектирование</h3><p>Согласуем архитектуру, сроки и состав работ.</p></div>
+                <div class="step"><b>03</b><h3>Разработка</h3><p>Работаем короткими итерациями и показываем результат.</p></div>
+                <div class="step"><b>04</b><h3>Запуск и поддержка</h3><p>Выпускаем, наблюдаем за системой и остаёмся на связи.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="wrap">
+            <div class="l">
+                <h2>Расскажите о задаче</h2>
+                <p>Опишите проект в нескольких предложениях. Мы ответим в рабочее время и предложим формат работы.</p>
+            </div>
+            <div class="box">
+                <div><small>Почта</small><a href="mailto:norrkaldsystems@gmail.com">norrkaldsystems@gmail.com</a></div>
+                <div><small>Telegram</small><a href="https://t.me/Varyag08">@Varyag08</a></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© 2026 Norrkald Systems</span>
+        <!--<span>Россия · ИНН [укажите] · ОГРН [укажите]</span>-->
+    </div>
+</footer>
+
+</body>
+</html>
