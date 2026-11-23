@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Norrkald Systems</title>
-    <meta name="description" content="Norrkald Systems builds modern software for your business: websites, Telegram bots, Android and desktop apps, web apps and APIs.">
+    <meta name="description" content="Norrkald Systems builds websites, online stores, Telegram bots, Android and desktop apps and web apps to order. Describe your project and get scope, timeline and price.">
     <meta property="og:title" content="Norrkald Systems">
     <meta property="og:description" content="Modern software solutions for your business.">
     <meta property="og:type" content="website">
@@ -166,6 +166,14 @@
         .actions .btn.ghost{background:transparent;border:1px solid var(--line2)}
         #note{font-size:13px;color:var(--dim);min-height:20px}
 
+        .custom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;padding:28px 32px;border:1px dashed var(--line2);border-radius:18px;background:rgba(10,34,51,.5)}
+        .custom>div{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:6px}
+        .custom h3{font-weight:600;font-size:22px}
+        .custom p{color:var(--muted);font-size:16px;max-width:640px}
+        .howbox{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+        .how{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:12px}
+        .how li{counter-increment:s;display:flex;align-items:center;gap:14px;color:var(--ice);font-size:16px}
+        .how li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font:500 14px/1 var(--mono),monospace}
         footer{background:var(--bg3);color:var(--dim);font-size:14px}
         footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-block:28px}
 
@@ -218,7 +226,7 @@
                 <a href="#services" data-i18n="nav1">Services</a>
                 <a href="#approach" data-i18n="nav2">Approach</a>
                 <a href="#process" data-i18n="nav3">Process</a>
-                <a class="cta-s" href="#contact" data-i18n="nav4">Contact</a>
+                <a class="cta-s" href="#contact" data-i18n="nav4">Order</a>
             </nav>
             <div class="lang" role="group" aria-label="Language">
                 <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -237,11 +245,11 @@
                 <div class="eyebrow" data-i18n="eyebrow">Software &amp; systems</div>
                 <h1 data-i18n="h1">Modern software solutions for your business</h1>
                 <div class="ticker" aria-live="off"><span data-i18n="build">We build</span> <b id="word">web platforms</b></div>
-                <p class="lead" data-i18n="lead">Norrkald Systems designs, builds and runs software that helps companies move faster and stay reliable.</p>
+                <p class="lead" data-i18n="lead">Norrkald Systems builds websites, online stores, Telegram bots and apps to order. Tell us what you need, and we make it.</p>
                 <div class="btns">
-                    <a class="btn primary" href="#contact"><span data-i18n="cta1">Start a project</span>
+                    <a class="btn primary" href="#contact"><span data-i18n="cta1">Order a project</span>
                         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-                    <a class="btn ghost" href="#services" data-i18n="cta2">Explore services</a>
+                    <a class="btn ghost" href="https://t.me/norrkald" data-i18n="cta2">Message us on Telegram</a>
                 </div>
             </div>
             <div class="visual" id="visual">
@@ -266,6 +274,10 @@
             <div class="tabs rv">
                 <div class="tablist" role="tablist" aria-label="Services" id="tablist"></div>
                 <div class="panel spot" role="tabpanel" id="panel" tabindex="0"></div>
+            </div>
+            <div class="custom rv">
+                <div><h3 data-i18n="cu_t">Need something else?</h3><p data-i18n="cu_p">We build any website or app to order. Describe your task in the form or message us on Telegram, and we reply with scope, timeline and price.</p></div>
+                <a class="btn primary" href="#contact" data-i18n="cu_b">Order a project</a>
             </div>
         </div>
     </section>
@@ -304,8 +316,12 @@
     <section id="contact" class="contact">
         <div class="wrap">
             <div class="l rv">
-                <h2 data-i18n="c_title">Tell us about your project</h2>
-                <p data-i18n="c_text">Pick what you need, add a few words and send us a ready-made email.</p>
+                <h2 data-i18n="c_title">Order your project</h2>
+                <p data-i18n="c_text">Describe what you need in the form, or message us on Telegram. We reply with scope, timeline and price.</p>
+                <div class="howbox">
+                    <div class="eyebrow" data-i18n="o_t">How to order</div>
+                    <ol class="how"><li data-i18n="o1">Describe your idea in the form or on Telegram.</li><li data-i18n="o2">We reply with scope, timeline and price.</li><li data-i18n="o3">We build it and launch it.</li></ol>
+                </div>
                 <div class="direct">
                     <div><small data-i18n="c_email">Email</small><a href="mailto:norrkaldsystems@gmail.com" id="mailaddr">norrkaldsystems@gmail.com</a></div>
                     <div><small>Telegram</small><a href="https://t.me/Varyag08">@Varyag08</a></div>
@@ -322,7 +338,8 @@
                 </div>
                 <div><label for="fmsg" data-i18n="f_msg">Project details</label><textarea id="fmsg" data-i18n-ph="f_ph" placeholder="What are you building and what should it achieve?"></textarea></div>
                 <div class="actions">
-                    <a class="btn primary" id="send" href="mailto:norrkaldsystems@gmail.com" data-i18n="f_send">Open email draft</a>
+                    <a class="btn primary" id="send" href="mailto:norrkaldsystems@gmail.com" data-i18n="f_send">Send by email</a>
+                    <a class="btn ghost" href="https://t.me/Varyag08" data-i18n="f_tg">Order on Telegram</a>
                     <button type="button" class="btn ghost" id="copy" data-i18n="f_copy">Copy text</button>
                 </div>
                 <div id="note" role="status"></div>
@@ -363,7 +380,7 @@
             en:{
                 words:['websites','Telegram bots','Android apps','desktop apps','web apps'],
                 tabs:[
-                    {n:'Websites',d:'Landing pages and company sites that look sharp on any screen and are easy to update.',p:['Landing pages and company sites','Responsive layouts','PHP backends and admin panels','Hosting setup and launch']},
+                    {n:'Websites & online stores',d:'Online stores, landing pages and company sites that look sharp on any screen and are easy to manage.',p:['Online stores with catalog and orders','Landing pages and company sites','PHP backends and admin panels','Hosting setup and launch']},
                     {n:'Telegram bots',d:'Bots that take orders, answer customers and send notifications, so routine work happens on its own.',p:['Order and booking bots','Customer support bots','Notifications and reminders','Connection to your database']},
                     {n:'Android apps',d:'Native Android applications written in Kotlin, with a clean interface and a reliable backend.',p:['Native apps in Kotlin','Connection to your Web API','Offline-friendly data handling','Release preparation']},
                     {n:'Desktop apps',d:'Programs for Windows and Linux built with C#, .NET and Avalonia for your daily business tasks.',p:['Windows and Linux apps','Cross-platform UI with Avalonia','Tools backed by a database','Import and export of your data']},
@@ -379,17 +396,25 @@
                 fail:'Could not copy. Select the text and copy it manually.'
             },
             ru:{
-                nav1:'Услуги',nav2:'Подход',nav3:'Процесс',nav4:'Контакты',
+                nav1:'Услуги',nav2:'Подход',nav3:'Процесс',nav4:'Заказать',
+                cu_t:'Нужно что-то другое?',
+                cu_p:'Делаем любые сайты и приложения на заказ. Опишите задачу в форме или напишите нам в Telegram, и мы ответим с объёмом работ, сроками и ценой.',
+                cu_b:'Заказать проект',
+                o_t:'Как заказать',
+                o1:'Опишите идею в форме или в Telegram.',
+                o2:'Мы ответим с объёмом работ, сроками и ценой.',
+                o3:'Делаем проект и запускаем его.',
+                f_tg:'Заказать в Telegram',
                 eyebrow:'Software & systems',
                 h1:'Современные IT-решения для вашего бизнеса',
                 build:'Мы создаём',
                 words:['сайты','Telegram-боты','Android-приложения','приложения для ПК','веб-приложения'],
-                lead:'Norrkald Systems проектирует, разрабатывает и сопровождает ПО, которое помогает компаниям двигаться быстрее и работать надёжнее.',
-                cta1:'Начать проект',cta2:'Наши услуги',
+                lead:'Norrkald Systems создаёт сайты, интернет-магазины, Telegram-боты и приложения на заказ. Расскажите, что нужно, и мы это сделаем.',
+                cta1:'Заказать проект',cta2:'Написать в Telegram',
                 techLabel:'Технологии, с которыми мы работаем',
                 s_eyebrow:'Услуги',s_title:'От первого прототипа до работающей системы',
                 tabs:[
-                    {n:'Сайты',d:'Лендинги и сайты компаний, которые аккуратно выглядят на любом экране и просты в обновлении.',p:['Лендинги и сайты компаний','Адаптивная вёрстка','PHP-бэкенд и админ-панели','Настройка хостинга и запуск']},
+                    {n:'Сайты и интернет-магазины',d:'Интернет-магазины, лендинги и сайты компаний, которые аккуратно выглядят на любом экране и просты в управлении.',p:['Интернет-магазины с каталогом и заказами','Лендинги и сайты компаний','PHP-бэкенд и админ-панели','Настройка хостинга и запуск']},
                     {n:'Telegram-боты',d:'Боты, которые принимают заказы, отвечают клиентам и отправляют уведомления, чтобы рутина шла сама.',p:['Боты для заказов и записи','Боты поддержки клиентов','Уведомления и напоминания','Подключение к вашей базе данных']},
                     {n:'Android-приложения',d:'Нативные приложения для Android на Kotlin с понятным интерфейсом и надёжным сервером.',p:['Нативные приложения на Kotlin','Подключение к вашему Web API','Работа с данными без постоянной сети','Подготовка к публикации']},
                     {n:'Приложения для ПК',d:'Программы для Windows и Linux на C#, .NET и Avalonia для ваших ежедневных задач.',p:['Приложения для Windows и Linux','Кроссплатформенный интерфейс на Avalonia','Инструменты с базой данных','Импорт и экспорт ваших данных']},
@@ -407,12 +432,12 @@
                 p2t:'Проектирование',p2p:'Согласуем архитектуру, сроки и состав работ.',
                 p3t:'Разработка',p3p:'Работаем короткими итерациями и показываем результат.',
                 p4t:'Запуск и поддержка',p4p:'Выпускаем, наблюдаем за системой и остаёмся на связи.',
-                c_title:'Расскажите о проекте',c_text:'Выберите, что нужно, добавьте пару слов, и мы подготовим готовое письмо.',
+                c_title:'Закажите проект',c_text:'Опишите, что нужно, в форме или напишите нам в Telegram. Мы ответим с объёмом работ, сроками и ценой.',
                 c_email:'Почта',
                 f_need:'Что вам нужно?',f_name:'Ваше имя',f_mail:'Ваша почта',f_msg:'Детали проекта',
                 f_ph:'Что вы создаёте и какой результат нужен?',
-                f_send:'Открыть черновик письма',f_copy:'Скопировать текст',
-                /*legal:'Реквизиты: [укажите]',*/
+                f_send:'Отправить по почте',f_copy:'Скопировать текст',
+                legal:'Реквизиты: [укажите]',
                 subject:'Запрос по проекту',
                 hello:'Здравствуйте, Norrkald Systems!',
                 need:'Меня интересует: ',
