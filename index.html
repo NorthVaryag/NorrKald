@@ -45,6 +45,7 @@
         .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
         .brand span{font-family:var(--display),sans-serif;font-weight:600;font-size:22px;letter-spacing:.5px}
         .brand span i{font-style:normal;font-weight:500;color:var(--dim)}
+        .brand span em{font-style:normal;color:var(--accent)}
         .right{display:flex;align-items:center;gap:20px}
         .menu{display:flex;align-items:center;gap:26px}
         .menu a{color:var(--ice);text-decoration:none;font-size:15px;position:relative}
@@ -56,6 +57,8 @@
         .lang button:not([aria-pressed="true"]):hover{background:var(--bg2)}
         .cta-s{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:10px;background:var(--accent);color:var(--ink);font-weight:600;font-size:15px;text-decoration:none;transition:background .2s,transform .2s}
         .cta-s:hover{background:var(--ice);transform:translateY(-1px)}
+        .menu a.cta-s{color:var(--ink)}
+        .menu a.cta-s::after{display:none}
 
         /* hero */
         .hero{position:relative;overflow:hidden;padding-block:72px 96px;margin-top:-71px;padding-top:150px;background:
@@ -210,6 +213,11 @@
             .step::after{transform:scaleX(1)}
             .track{flex-wrap:wrap;width:auto;justify-content:center}
         }
+
+        /* no text selection on the page, but keep it in form fields and contact details */
+        body{-webkit-user-select:none;user-select:none}
+        input,textarea{-webkit-user-select:text;user-select:text}
+        .direct a{-webkit-user-select:all;user-select:all}
     </style>
 </head>
 <body>
@@ -219,7 +227,7 @@
     <div class="wrap nav">
         <a class="brand" href="#top" aria-label="Norrkald Systems">
             <svg width="40" height="40" viewBox="60 40 140 140" aria-hidden="true"><rect x="60" y="40" width="140" height="140" rx="22" fill="#0E2F44"/><path d="M84 66 Q130 42 176 66" fill="none" stroke="#4FD1C5" stroke-width="3" stroke-linecap="round"/><path d="M92 76 Q130 58 168 76" fill="none" stroke="#7CC4E0" stroke-width="2" stroke-linecap="round"/><polygon points="92,150 92,86 110,86 148,134 148,86 168,86 168,150 150,150 112,102 112,150" fill="#CDEBF7"/><polygon points="148,86 168,86 168,108" fill="#7CC4E0"/><polygon points="92,86 110,86 92,108" fill="#7CC4E0"/><path d="M84 166 L108 160 L132 166 L156 158 L176 166" fill="none" stroke="#4FD1C5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Norrkald <i>Systems</i></span>
+            <span>Norr<em>kald</em> <i>Systems</i></span>
         </a>
         <div class="right">
             <nav class="menu" aria-label="Main">
@@ -249,7 +257,7 @@
                 <div class="btns">
                     <a class="btn primary" href="#contact"><span data-i18n="cta1">Order a project</span>
                         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-                    <a class="btn ghost" href="https://t.me/norrkald" data-i18n="cta2">Message us on Telegram</a>
+                    <a class="btn ghost" href="https://t.me/Varyag08" data-i18n="cta2">Message us on Telegram</a>
                 </div>
             </div>
             <div class="visual" id="visual">
